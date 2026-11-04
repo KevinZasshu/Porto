@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kevin Tan – Portofolio</title>
+<meta name="description" content="Portofolio Kevin Tan, mahasiswa Computer Science & Mathematics BINUS University.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2323252b'/><text x='50' y='68' font-size='56' text-anchor='middle' fill='%232196f3' font-family='sans-serif' font-weight='700'>K</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#23252b; --ink-2:#3a3d46; --muted:#5d6270; --line:#dfe3ea;
+  --paper:#f5f7fa; --blue:#2196f3; --blue-d:#0b6fc2; --white:#fff;
+  --head:'Space Grotesk',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:400 1.0625rem/1.65 var(--body);color:var(--ink);background:var(--paper)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+
+/* nav */
+nav{position:absolute;top:0;left:0;right:0;z-index:2;padding:1.25rem 0}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+nav .logo{font:700 1.25rem var(--head);color:var(--white);text-decoration:none}
+nav ul{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap}
+nav ul a{color:#c9ced8;text-decoration:none;font-size:.95rem}
+nav ul a:hover{color:var(--white)}
+
+/* hero */
+.hero{position:relative;background:var(--ink);color:var(--white);padding:9rem 0 6rem;overflow:hidden;
+  background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:48px 48px}
+.hero svg{position:absolute;left:0;bottom:1.5rem;width:100%;height:240px;pointer-events:none}
+.hero .curve{fill:none;stroke:var(--blue);stroke-width:3;stroke-linecap:round;stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 2.8s .3s ease-out forwards}
+.hero .axis{stroke:rgba(255,255,255,.25);stroke-width:1.5}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero h1{font:700 clamp(3.2rem,10vw,6.5rem)/1 var(--head);letter-spacing:-.03em}
+.hero .role{font:500 clamp(1.15rem,3vw,1.6rem) var(--head);color:#bfe0fb;margin-top:1rem}
+.hero p.lead{max-width:36rem;margin-top:1.5rem;color:#d3d8e2}
+.cta{display:flex;gap:.75rem;margin-top:2rem;flex-wrap:wrap;position:relative;z-index:1}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:999px;font:500 1rem var(--body);text-decoration:none;border:2px solid var(--blue)}
+.btn.fill{background:var(--blue);color:var(--ink)}
+.btn.fill:hover{background:#5bb4f6}
+.btn.line{color:var(--white)}
+.btn.line:hover{background:rgba(33,150,243,.18)}
+.hero .wrap{position:relative;z-index:1;padding-bottom:3rem}
+
+/* sections */
+section{padding:5rem 0}
+h2{font:700 clamp(1.7rem,4vw,2.3rem)/1.15 var(--head);letter-spacing:-.01em;margin-bottom:2rem}
+.about p{max-width:42rem;color:var(--ink-2)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2rem;margin-top:2.5rem;max-width:44rem}
+.facts dt{font:500 .9rem var(--body);color:var(--muted)}
+.facts dd{font:700 1.2rem var(--head)}
+
+/* projects: timeline list */
+.projects{background:var(--white)}
+.proj{display:grid;grid-template-columns:5rem 1fr;gap:1.5rem;padding:1.75rem 0;border-top:1px solid var(--line)}
+.proj:last-child{border-bottom:1px solid var(--line)}
+.proj .yr{font:500 1rem var(--head);color:var(--blue-d)}
+.proj h3{font:700 1.35rem/1.25 var(--head)}
+.proj .course{display:inline-block;margin:.4rem 0 .6rem;padding:.1rem .7rem;border-radius:999px;background:#e6f3fe;color:var(--blue-d);font-size:.9rem}
+.proj p{color:var(--ink-2);max-width:40rem}
+
+
+/* galeri proyek */
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:.75rem;margin-top:1.25rem;max-width:40rem}
+.shots.two{grid-template-columns:repeat(2,1fr)}
+.shot{padding:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--paper);cursor:zoom-in;display:block}
+.shot img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;transition:transform .25s}
+.shot:hover img{transform:scale(1.04)}
+@media (prefers-reduced-motion:reduce){.shot img{transition:none}.shot:hover img{transform:none}}
+dialog#lb{border:0;border-radius:12px;padding:0;max-width:min(92vw,1100px);background:var(--ink);overflow:hidden}
+dialog#lb::backdrop{background:rgba(20,22,27,.8)}
+dialog#lb img{display:block;max-width:100%;max-height:82vh;margin:0 auto}
+dialog#lb p{color:#d3d8e2;font-size:.95rem;padding:.75rem 1rem}
+dialog#lb button{position:absolute;top:.5rem;right:.5rem;width:2.4rem;height:2.4rem;border-radius:50%;border:0;background:var(--white);color:var(--ink);font-size:1.3rem;cursor:pointer}
+
+/* skills */
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:2.5rem}
+.skillgrid h3{font:700 1.1rem var(--head);margin-bottom:.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none}
+.chips li{padding:.3rem .9rem;border:1.5px solid var(--ink);border-radius:8px;font-weight:500;font-size:.97rem}
+.lang li{display:flex;justify-content:space-between;max-width:16rem;padding:.35rem 0;border-bottom:1px solid var(--line);list-style:none}
+.lang span{color:var(--muted)}
+
+/* education */
+.edu{background:var(--ink);color:var(--white)}
+.edu p{color:#d3d8e2}
+.edu .deg{font:700 1.5rem var(--head);color:var(--white)}
+
+/* contact */
+.contact a.big{display:block;font:700 clamp(1.3rem,4vw,2.1rem) var(--head);word-break:break-all;text-decoration:none;color:var(--ink);margin-bottom:.5rem}
+.contact a.big:hover{color:var(--blue-d)}
+.contact .alt{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.25rem}
+.contact .alt a{color:var(--blue-d)}
+footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (max-width:560px){
+  nav ul{gap:1rem}
+  .hero{padding-top:8rem}
+  .proj{grid-template-columns:1fr;gap:.25rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero .curve{animation:none;stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <nav aria-label="Navigasi utama">
+    <div class="wrap">
+      <a class="logo" href="#top">Kevin Tan</a>
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#proyek">Proyek</a></li>
+        <li><a href="#skill">Skill</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <svg viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true">
+    <line class="axis" x1="0" y1="120" x2="1200" y2="120"/>
+    <path class="curve" d="M0 120 C 100 20, 200 20, 300 120 S 500 220, 600 120 S 800 20, 900 120 S 1100 220, 1200 120"/>
+  </svg>
+
+  <div class="wrap" id="top">
+    <h1>Kevin Tan</h1>
+    <p class="role">Mahasiswa Computer Science &amp; Mathematics</p>
+    <p class="lead">Mahasiswa BINUS University yang tertarik pada matematika, pemrograman, dan Data Science.</p>
+    <div class="cta">
+      <a class="btn fill" href="#proyek">Lihat proyek</a>
+      <a class="btn line" href="mailto:kevin.tan003@binus.ac.id">Kirim email</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="about" id="tentang">
+    <div class="wrap">
+      <h2>Tentang saya</h2>
+      <p>Saya mahasiswa Computer Science Mathematics di BINUS University dengan ketertarikan pada matematika. Saya memiliki pemahaman dan pengalaman akademik dalam penggunaan bahasa pemrograman, serta mempelajari berbagai topik Data Science. Saya ingin terus mengembangkan kemampuan analitis dan komputasional, serta menerapkan apa yang telah saya pelajari di lingkungan kerja profesional.</p>
+      <dl class="facts">
+        <div><dt>Kuliah</dt><dd>BINUS University, 2023–2027</dd></div>
+        <div><dt>Jurusan</dt><dd>Computer Science &amp; Mathematics</dd></div>
+        <div><dt>Bahasa</dt><dd>Indonesia, Inggris, Mandarin</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="projects" id="proyek">
+    <div class="wrap">
+      <h2>Proyek</h2>
+
+      <article class="proj">
+        <div class="yr">2025</div>
+        <div>
+          <h3>Laravel Project</h3>
+          <span class="course">Web Programming</span>
+          <p>Mengembangkan website reservasi akomodasi yang memungkinkan pengguna memesan hotel, villa, apartemen, dan berbagai jenis tempat tinggal lainnya.</p>
+          <div class="shots">
+            <button type="button" class="shot" data-full="Image/laravel1.jpg" data-alt="Halaman utama AirlnS berisi daftar properti dengan harga per malam"><img src="Image/laravel1.jpg" alt="Halaman utama AirlnS berisi daftar properti dengan harga per malam" loading="lazy"></button>
+            <button type="button" class="shot" data-full="Image/laravel2.jpg" data-alt="Halaman All Properties dengan tombol lihat detail, edit, dan hapus"><img src="Image/laravel2.jpg" alt="Halaman All Properties dengan tombol lihat detail, edit, dan hapus" loading="lazy"></button>
+            <button type="button" class="shot" data-full="Image/laravel3.jpg" data-alt="Halaman My Bookings yang menampilkan riwayat pemesanan"><img src="Image/laravel3.jpg" alt="Halaman My Bookings yang menampilkan riwayat pemesanan" loading="lazy"></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="yr">2025</div>
+        <div>
+          <h3>GoDev Project</h3>
+          <span class="course">Software Engineering</span>
+          <p>Bekerja sama dalam tim untuk mengembangkan software berbentuk website yang mengintegrasikan fitur LinkedIn dan GitHub.</p>
+          <div class="shots two">
+            <button type="button" class="shot" data-full="Image/GoDev1.jpg" data-alt="Beranda GoDev dengan feed postingan dan saran developer"><img src="Image/GoDev1.jpg" alt="Beranda GoDev dengan feed postingan dan saran developer" loading="lazy"></button>
+            <button type="button" class="shot" data-full="Image/GoDev2.jpg" data-alt="Halaman Explore GoDev berisi daftar lowongan kerja"><img src="Image/GoDev2.jpg" alt="Halaman Explore GoDev berisi daftar lowongan kerja" loading="lazy"></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="yr">2025</div>
+        <div>
+          <h3>Drone E-Commerce &amp; Forum</h3>
+          <span class="course">Human and Computer Interaction</span>
+          <p>Merancang prototype di Figma, lalu mengembangkan website untuk penjualan drone dan forum diskusi.</p>
+          <div class="shots">
+            <button type="button" class="shot" data-full="Image/Drone1.jpg" data-alt="Halaman utama toko drone JCI dengan produk SkyVision X7"><img src="Image/Drone1.jpg" alt="Halaman utama toko drone JCI dengan produk SkyVision X7" loading="lazy"></button>
+            <button type="button" class="shot" data-full="Image/Drone2.jpg" data-alt="Halaman Products dengan filter kategori drone"><img src="Image/Drone2.jpeg" alt="Halaman Products dengan filter kategori drone" loading="lazy"></button>
+            <button type="button" class="shot" data-full="Image/Drone3.jpg" data-alt="Halaman Community Forum berisi daftar postingan"><img src="Image/Drone3.jpeg" alt="Halaman Community Forum berisi daftar postingan" loading="lazy"></button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skill">
+    <div class="wrap">
+      <h2>Skill</h2>
+      <div class="skillgrid">
+        <div>
+          <h3>Bahasa pemrograman</h3>
+          <ul class="chips">
+            <li>C</li><li>C#</li><li>Python</li><li>Java</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>SQL</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <ul class="chips"><li>Figma</li><li>GitHub</li><li>Google Colab</li></ul>
+        </div>
+        <div>
+          <h3>Bahasa</h3>
+          <ul class="lang">
+            <li>Indonesia <span>Fasih</span></li>
+            <li>Inggris <span>Menengah</span></li>
+            <li>Mandarin <span>Menengah</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="edu" id="pendidikan">
+    <div class="wrap">
+      <h2>Pendidikan</h2>
+      <p class="deg">Computer Science &amp; Mathematics</p>
+      <p>BINUS University, 2023–2027</p>
+    </div>
+  </section>
+
+  <section class="contact" id="kontak">
+    <div class="wrap">
+      <h2>Mari terhubung</h2>
+      <a class="big" href="mailto:kevin.tan003@binus.ac.id">kevin.tan003@binus.ac.id</a>
+      <div class="alt">
+        <a href="https://www.linkedin.com/in/kevin-tan-836a18292/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://wa.me/6281374298781">0813-7429-8781</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<dialog id="lb" aria-label="Tampilan gambar">
+  <button type="button" aria-label="Tutup" id="lbx">&times;</button>
+  <img alt="" id="lbi">
+  <p id="lbc"></p>
+</dialog>
+<script>
+(function(){
+  var d=document.getElementById('lb'),i=document.getElementById('lbi'),c=document.getElementById('lbc');
+  document.querySelectorAll('.shot').forEach(function(b){
+    b.addEventListener('click',function(){i.src=b.dataset.full;i.alt=b.dataset.alt;c.textContent=b.dataset.alt;d.showModal()});
+  });
+  document.getElementById('lbx').addEventListener('click',function(){d.close()});
+  d.addEventListener('click',function(e){if(e.target===d)d.close()});
+})();
+</script>
+
+<footer>© <span id="y">2026</span> Kevin Tan</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
